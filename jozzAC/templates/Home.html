@@ -1,53 +1,15 @@
-<!doctype html>
-<html lang="en">
+{% extends "base.html" %}
+{% load static %}
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% block css %}
+    <link rel="stylesheet" href= "{% static "css/style.css" %}">
+{% endblock css %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>My Home Page</title>
-</head>
-
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
-        <div class="container-fluid ">
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <a href="#home" class="navbar-brand ">
-                    <img src="asset/Logo_cv.png" alt="logo">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: #783b08;" href="#about">About </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: #783b08;" href="#HowToOrder">How To Order </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: #783b08;" href="#contact">Product </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: #783b08;" href="#contact">Contact </a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </div>
-    </nav>
+{% block Content %}
     <!-- akhir navbar -->
     <!-- jumbotron -->
-    <section class="home" id="#home">
-        <div class="jumbotron" id="#home" style="background-image: url('asset/bacground_1.jpg');">
+    <section class="home">
+        <div class="jumbotron" id="#home" style="background-image: url({% static "asset/bacground_1.jpg" %});">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
@@ -60,57 +22,117 @@
     </section>
     <!-- akhir jumbotron -->
     <!-- About -->
-    <section class="about" id="about" style="background-image: url('asset/Blog_Merk-AC-Terbaik-Adem-dan-Hemat-Berkat-Low-Watt.jpg');">
+    <section class="about" id="about" style="background-image: url({% static "asset/Blog_Merk-AC-Terbaik-Adem-dan-Hemat-Berkat-Low-Watt.jpg" %});">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12 ">
                     <h2 class="text-center">About</h2>
                     <hr>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-5 offset-sm-1">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis adipisci sequi expedita voluptatem accusantium, quia repudiandae velit illo facere aliquam! Itaque veniam nulla deleniti omnis dolor accusamus nihil ex ut.</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-sm-5">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nostrum libero nemo maxime recusandae non quia eaque? Nobis mollitia vel beatae, illo reprehenderit dolore cumque incidunt. Voluptatum ex quis magni!</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- akhir about -->
+
     <!-- How To Order-->
-    <section class="HowToOrder" id="HowToOrder" style="background-image: url('asset/Blog_Merk-AC-Terbaik-Adem-dan-Hemat-Berkat-Low-Watt.jpg');">
+    <section class="HowToOrder" id="HowToOrder" style="background-image: url({% static "asset/imagesBackGround.jpg" %});">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2 class="text-center">How To Order</h2>
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-12 text-center heading-section ftco-animate fadeInUp ftco-animated">
+                    <h2 class="mb-3 text-white">How To Order</h2>
                     <hr>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-5 offset-sm-1">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis adipisci sequi expedita voluptatem accusantium, quia repudiandae velit illo facere aliquam! Itaque veniam nulla deleniti omnis dolor accusamus nihil ex ut.</p>
-                </div>
-                <div class="col-sm-5">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nostrum libero nemo maxime recusandae non quia eaque? Nobis mollitia vel beatae, illo reprehenderit dolore cumque incidunt. Voluptatum ex quis magni!</p>
+                <div class="col-md-12">
+                    <ul class="timeline animate-box">
+                        <li class="animate-box ">
+                            <div class="timeline-badge">
+                                <h5>First</h5>
+                            </div>
+                            <div class="timeline-panel ftco-animate text-md-left fadeInUp ftco-animated">
+                                <div class="icon icon-left"><span class="flaticon-dove-1"></span></div>
+                                <div class="timeline-heading">
+                                    <h6 class="timeline-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, dolores.</h6>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="animate-box timeline-inverted">
+                            <div class="timeline-badge">
+                                <h5>Second</h5>
+                            </div>
+                            <div class="timeline-panel ftco-animate text-md-right fadeInUp ftco-animated">
+                                <div class="icon icon-right"><span class="flaticon-dove-1"></span></div>
+                                <div class="timeline-heading">
+                                    <h6 class="timeline-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, dolores.</h6>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
     <!-- akhir How To Order -->
+    <!-- Product -->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-</body>
+    <!-- Akhir Product -->
+    <!-- Footer -->
+    <footer class="pt-5 pb-5 bt-1">
+        <div class="container mb-5">
+            <div class="pt-5 pb-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            <h2>Joz AC</h2>
+                            <h5 class="w-75">Jadikan Rumah anda lebih sejuk dan nyaman tanpa harus berat di Biaya bersama kami.</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>
+                            <h4>Bantuan</h4>
+                            <nav class="nav flex-column">
+                                <a class="nav-link pl-0" href="#">Cara Order</a>
+                                <a class="nav-link pl-0" href="#">LProduct</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>
+                            <h4>Explore</h4>
+                            <nav class="nav flex-column">
+                                <a class="nav-link pl-0" href="#">Contact Us</a>
+                                <a class="nav-link pl-0" href="#">About Us</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container pt-5 ">
+            <div class="text-center">
+                <p>&copy; 2021 - Joz AC - All right reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-</html>
-
-<!-- Pernyataan try ... catch menandai blok pernyataan untuk dicoba dan menentukan respons jika pengecualian dilempar -->
-<!-- On error resume next Menentukan bahwa ketika kesalahan run-time terjadi, kontrol pergi ke pernyataan segera setelah pernyataan di mana kesalahan terjadi dan eksekusi berlanjut. Gunakan formulir ini daripada On Error GoTo saat mengakses objek. -->
-<!-- On error GO to Menonaktifkan semua penangan kesalahan yang diaktifkan dalam prosedur saat ini -->
+    <!-- Akhir Footer -->
+{% endblock Content %}

@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.container{
+    margin-left: 0px;
+}
+
+.card {
+    /* margin-left: 0px !important; */
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
+    background: #fce300 !important;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 100px
+}
+
+input[type="text"], input[type="email"]{
+    margin-bottom: 5px;
+    border: none;
+    border-bottom-style: solid;
+    background: #fce300;
+}
+.box h1 {
+    color: rgb(145, 144, 144);
+    text-transform: uppercase;
+    font-weight: 500
+}
+
+input[type="submit"]{
+    background: #fce300de;
+    border-color: #fcb900e0;
+    border-width: 5px;
+    width: 200px;
+    height: 50px;
+}
+
+@media screen and (max-width: 450px) {
+    .card {
+        height: 750px;
+        margin-top: 0%;
+    }
+}

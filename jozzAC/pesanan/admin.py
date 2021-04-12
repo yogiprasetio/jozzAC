@@ -7,9 +7,9 @@ class PesananAdmin(admin.ModelAdmin):
         Admin View for Pesanan
     '''
     model = [PesananModel]
-    list_display = ('id','tanggal', 'nama', 'alamat')
+    list_display = ('kwitansi','tanggal', 'total')
     list_filter = ('tanggal',)
 
-    readonly_fields = ('slug_Pesanan','total')
-
+    readonly_fields = ('slug_Pesanan', 'total', 'tanggal')
+    search_fields = ('kwitansi', )
 admin.site.register(PesananModel, PesananAdmin)

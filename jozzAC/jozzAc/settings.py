@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Apps
     'product',
     'pesanan',
+    'client',
 ]
 
 MIDDLEWARE = [

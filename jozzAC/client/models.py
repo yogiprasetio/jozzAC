@@ -16,6 +16,9 @@ class ClientModel(models.Model):
     kota_Client			= models.CharField(max_length=30, default='SURABAYA')
     slug_Client			= models.SlugField()
 
+    class Meta:
+        verbose_name='Client'
+
     def save(self):
     	super().save()
     	if self.slug_Client is "":

@@ -9,6 +9,9 @@ class ProductModel(models.Model):
     hargaProduct	= models.PositiveIntegerField()
     slugProduct	= models.SlugField(editable=False)
 
+    class Meta:
+    	verbose_name='Product'
+
     def save(self):
     	self.slug = slugify(f"{self.namaProduct}")
     	super().save()

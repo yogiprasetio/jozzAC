@@ -342,7 +342,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid pr-auto pl-2">
+                <div class="container-fluid">
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -350,115 +350,170 @@
                     </div>
 
                     <!-- Content Form -->
-                    <form action="# " method="POST" class="ml-0 mr-5">
-                        <div class="form-group">
-                            <label for="inputName">Name</label>
-                            <input name="name" type="text" class="form-control" id="inputName"
-                                aria-describedby="emailHelp">
+                    <div class="container">
+                        <div class="row">
+                            <!-- <button type="button" class="btn btn-primary float-left" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    Tambah Data
+                                </button> -->
+                            <div class="col-sm">
+                                <div class="card">
+                                    <a href="#" data-toggle="modal" data-target="#exampleModal">
+                                        <div class="card-body">
+                                            <p>nama</p>
+                                            <p>nomer telfon</p>
+                                            <p>kota</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card">
+                                    <a href="#" data-toggle="modal" data-target="#exampleModal">
+                                        <div class="card-body">
+                                            <p>nama</p>
+                                            <p>nomer telfon</p>
+                                            <p>kota</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card">
+                                    <a href="#" data-toggle="modal" data-target="#exampleModal">
+                                        <div class="card-body">
+                                            <p>nama</p>
+                                            <p>nomer telfon</p>
+                                            <p>kota</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="inputPhone">Phone</label>
-                            <input name="phone" type="text" class="form-control" id="inputPhone"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail">Email</label>
-                            <input name="email" type="email" class="form-control" id="inputEmail"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAddress">Address</label>
-                            <textarea name="address" type="text" class="form-control" id="inputAddress"
-                                aria-describedby="emailHelp"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPemesanan">Pemesanan</label>
-                            <input name="pemesanan" type="text" class="form-control" id="inputPemesanan"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPrice">Price</label>
-                            <input name="price" type="text" class="form-control" id="inputPrice"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1">Tukang</label>
-                            <select name="tukang" class="form-control" id="exampleFormControlSelect1">
-                            <option value="L">Laki-laki</option>
-                            <option value="P">Perempuan</option>
-                            </select>
-                        </div>
-                        <div class="modal-footer m-2">
-                            <span style="color: #2AF314;">
-                                <i type="submit" class="fas fa-check-circle fa-3x m-2"></i>
-                            </span>
-                            <span style="color: #f80d04;">
-                                <i type="button" class="fas fa-times-circle fa-3x m-2"></i>
-                            </span>
-                            </form>
-                        </div>
-                <!-- /.container-fluid -->
+                    </div>
 
-            </div>
-            <!-- End of Main Content -->
+                    <!-- /.container-fluid -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!-- <h5 class="modal-title" id="exampleModalLabel">Tambah Data Dosen</h5> -->
+                                <div class="modal-title" id="exampleModalLabel">
+                                    <h6>nama</h6>
+                                    <h6>no telfon</h6>
+                                    <h6>kota</h6>
+                                    <h6>Noted :</h6>
+                                </div>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+                                        <br>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm">
+                                                    <h6>Dp : Rp.200.000</h6>
+                                                </div>
+                                                <div class="col-sm">
+                                                    <h6>PIC : Yogi</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <h6>Approved</h6>
+                                    </div>
+                                    <div class="row">
+                                        <h6>Down Payment</h6>
+                                    </div>
+                                    <div class="row">
+                                        <h6>On Progress</h6>
+                                    </div>
+                                    <div class="row">
+                                        <h6>Lunas</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2020</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+
+            </div>
+            <!-- End of Content Wrapper -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Page Wrapper -->
 
-    </div>
-    <!-- End of Page Wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="js/demo/chart-area-demo.js"></script>
+        <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 

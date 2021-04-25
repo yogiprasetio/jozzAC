@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" href="asset/owl-carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="asset/owl-carousel/assets/owl.theme.default.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" /> -->
     <title>My Home Page</title>
 </head>
 
@@ -40,7 +42,7 @@
                         <a class="nav-link" style="color: #783b08;" href="#HowToOrder">How To Order </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #783b08;" href="#contact">Product </a>
+                        <a class="nav-link" style="color: #783b08;" href="#Product">Product </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="color: #783b08;" href="#contact">Contact </a>
@@ -91,30 +93,101 @@
                 <hr>
             </div>
         </div>
-        <div class="carousell">
-            <div class="card border-warning mt-5 mr-2" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body text-warning">
-                    <h5 class="card-title">Warning card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="carousell">
-            <div class="card border-warning mt-5 mr-2" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body text-warning">
-                    <h5 class="card-title">Warning card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="carousell">
-            <div class="card border-warning mt-5 mr-2" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body text-warning">
-                    <h5 class="card-title">Warning card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="row ftco-animate fadeInUp ftco-animated">
+            <div class="col-md-12">
+                <div class="carousel-testimony owl-carousel ftco-owl owl-loaded owl-drag">
+                    <div class="owl-stage-outer owl-height" style="height: 281.4px;">
+                        <div class="owl-item active" style="width: 336.667px; margin-right: 30px;">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="text">
+                                        <p class="mb-4">{{$sm->message}}</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="pl-3">
+                                                <p class="name">{{$sm->guest->guest_name}}</p>
+                                                <span class="position">{{$sm->guest->guest_address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 336.667px; margin-right: 30px;">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="text">
+                                        <p class="mb-4">{{$sm->message}}</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="pl-3">
+                                                <p class="name">{{$sm->guest->guest_name}}</p>
+                                                <span class="position">{{$sm->guest->guest_address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 336.667px; margin-right: 30px;">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="text">
+                                        <p class="mb-4">{{$sm->message}}</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="pl-3">
+                                                <p class="name">{{$sm->guest->guest_name}}</p>
+                                                <span class="position">{{$sm->guest->guest_address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 336.667px; margin-right: 30px;">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="text">
+                                        <p class="mb-4">{{$sm->message}}</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="pl-3">
+                                                <p class="name">{{$sm->guest->guest_name}}</p>
+                                                <span class="position">{{$sm->guest->guest_address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 336.667px; margin-right: 30px;">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="text">
+                                        <p class="mb-4">{{$sm->message}}</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="pl-3">
+                                                <p class="name">{{$sm->guest->guest_name}}</p>
+                                                <span class="position">{{$sm->guest->guest_address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 336.667px; margin-right: 30px;">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="text">
+                                        <p class="mb-4">{{$sm->message}}</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="pl-3">
+                                                <p class="name">{{$sm->guest->guest_name}}</p>
+                                                <span class="position">{{$sm->guest->guest_address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -162,7 +235,7 @@
     </section>
     <!-- akhir How To Order -->
     <!-- Product -->
-    <section class="product bg-ligth">
+    <section class="product bg-ligth" id="Product">
         <div class="container mx-auto my-auto">
             <div class="card-group mx-auto my-auto">
 
@@ -262,9 +335,10 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <script src="jquery.min.js"></script>
+    <script src="asset/owl-carousel/owl.carousel.min.js"></script>
     <script src="js/script.js "></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <!-- <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('.carousell').slick({
@@ -274,7 +348,7 @@
                 autoplaySpeed: 2000,
             });
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

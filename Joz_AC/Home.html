@@ -9,11 +9,15 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-        <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="asset/owl-carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="asset/owl-carousel/assets/owl.theme.default.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" /> -->
     <title>My Home Page</title>
 </head>
 
@@ -22,8 +26,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
         <div class="container-fluid ">
             <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a href="#home" class="navbar-brand ">
@@ -39,7 +42,7 @@
                         <a class="nav-link" style="color: #783b08;" href="#HowToOrder">How To Order </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #783b08;" href="#contact">Product </a>
+                        <a class="nav-link" style="color: #783b08;" href="#Product">Product </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="color: #783b08;" href="#contact">Contact </a>
@@ -58,8 +61,7 @@
                 <div class="row">
                     <div class="col-sm-5">
                         <h1>Joz AC</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ut sunt quibusdam
-                            praesentium hic voluptas, dolorum aperiam ducimus ratione! Tempore!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ut sunt quibusdam praesentium hic voluptas, dolorum aperiam ducimus ratione! Tempore!</p>
                     </div>
                 </div>
             </div>
@@ -67,8 +69,7 @@
     </section>
     <!-- akhir jumbotron -->
     <!-- About -->
-    <section class="about" id="about"
-        style="background-image: url('asset/Blog_Merk-AC-Terbaik-Adem-dan-Hemat-Berkat-Low-Watt.jpg');">
+    <section class="about" id="about" style="background-image: url('asset/Layout_2.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 ">
@@ -77,28 +78,122 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-5 offset-sm-1">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                            </p>
-                        </div>
-                    </div>
+                <div class="col-sm-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque molestiae quidem autem labore mollitia earum aspernatur repellendus pariatur dolore molestias accusamus cum illo totam quisquam culpa perspiciatis, voluptatem iusto explicabo!</p>
                 </div>
-                <div class="col-sm-5">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                            </p>
+            </div>
+        </div>
+    </section>
+    <!-- akhir about -->
+    <!-- Testimonial -->
+    <section class="testimonial bg-ligth" id="testimonial">
+        <div class="row">
+            <div class="col-sm-12 ">
+                <h2 class="text-center">Testimonial</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row ftco-animate fadeInUp ftco-animated">
+            <div class="col-md-12">
+                <div class="carousel-testimony owl-carousel ftco-owl owl-loaded owl-drag">
+                    <div class="owl-stage-outer owl-height" style="height: 281.4px;">
+                        <div class="owl-item active" style="width: 336.667px; margin-right: 30px;">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="text">
+                                        <p class="mb-4">{{$sm->message}}</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="pl-3">
+                                                <p class="name">{{$sm->guest->guest_name}}</p>
+                                                <span class="position">{{$sm->guest->guest_address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 336.667px; margin-right: 30px;">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="text">
+                                        <p class="mb-4">{{$sm->message}}</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="pl-3">
+                                                <p class="name">{{$sm->guest->guest_name}}</p>
+                                                <span class="position">{{$sm->guest->guest_address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 336.667px; margin-right: 30px;">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="text">
+                                        <p class="mb-4">{{$sm->message}}</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="pl-3">
+                                                <p class="name">{{$sm->guest->guest_name}}</p>
+                                                <span class="position">{{$sm->guest->guest_address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 336.667px; margin-right: 30px;">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="text">
+                                        <p class="mb-4">{{$sm->message}}</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="pl-3">
+                                                <p class="name">{{$sm->guest->guest_name}}</p>
+                                                <span class="position">{{$sm->guest->guest_address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 336.667px; margin-right: 30px;">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="text">
+                                        <p class="mb-4">{{$sm->message}}</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="pl-3">
+                                                <p class="name">{{$sm->guest->guest_name}}</p>
+                                                <span class="position">{{$sm->guest->guest_address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 336.667px; margin-right: 30px;">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="text">
+                                        <p class="mb-4">{{$sm->message}}</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="pl-3">
+                                                <p class="name">{{$sm->guest->guest_name}}</p>
+                                                <span class="position">{{$sm->guest->guest_address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- akhir about -->
+
+    <!-- Akhir Testimonial -->
     <!-- How To Order-->
     <section class="HowToOrder" id="HowToOrder" style="background-image: url('asset/imagesBackGround.jpg');">
         <div class="container">
@@ -118,8 +213,7 @@
                             <div class="timeline-panel ftco-animate text-md-left fadeInUp ftco-animated">
                                 <div class="icon icon-left"><span class="flaticon-dove-1"></span></div>
                                 <div class="timeline-heading">
-                                    <h6 class="timeline-body">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Suscipit, dolores.</h6>
+                                    <h6 class="timeline-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, dolores.</h6>
                                 </div>
                             </div>
                         </li>
@@ -130,8 +224,7 @@
                             <div class="timeline-panel ftco-animate text-md-right fadeInUp ftco-animated">
                                 <div class="icon icon-right"><span class="flaticon-dove-1"></span></div>
                                 <div class="timeline-heading">
-                                    <h6 class="timeline-body">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Suscipit, dolores.</h6>
+                                    <h6 class="timeline-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, dolores.</h6>
                                 </div>
                             </div>
                         </li>
@@ -142,7 +235,7 @@
     </section>
     <!-- akhir How To Order -->
     <!-- Product -->
-    <section class="product bg-ligth">
+    <section class="product bg-ligth" id="Product">
         <div class="container mx-auto my-auto">
             <div class="card-group mx-auto my-auto">
 
@@ -151,10 +244,7 @@
                         <div class="card-header">Header</div>
                         <div class="card-body text-warning">
                             <h5 class="card-title">Warning card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
 
@@ -162,10 +252,7 @@
                         <div class="card-header">Header</div>
                         <div class="card-body text-warning">
                             <h5 class="card-title">Warning card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
 
@@ -173,10 +260,7 @@
                         <div class="card-header">Header</div>
                         <div class="card-body text-warning">
                             <h5 class="card-title">Warning card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
 
@@ -184,10 +268,7 @@
                         <div class="card-header">Header</div>
                         <div class="card-body text-warning">
                             <h5 class="card-title">Warning card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
                 </div>
@@ -206,8 +287,7 @@
                     <div class="col-md-6">
                         <div>
                             <h2>Joz AC</h2>
-                            <h5 class="w-75">Jadikan Hunian anda lebih sejuk dan nyaman tanpa harus berat di Biaya
-                                bersama kami.</h5>
+                            <h5 class="w-75">Jadikan Dunia anda lebih sejuk dan nyaman tanpa harus berat di Biaya bersama kami.</h5>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -254,11 +334,21 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="jquery.min.js"></script>
+    <script src="asset/owl-carousel/owl.carousel.min.js"></script>
     <script src="js/script.js "></script>
+    <!-- <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.carousell').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        });
+    </script> -->
 </body>
 
 </html>

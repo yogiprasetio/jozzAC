@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block Content %}
+
+	{% for i in objects %}
+	<div class="product container" style="margin-top:15%">
+		<div class="row">
+		  <div class="col-sm-3">
+		    <div class="card">
+		    	<div class="card-header">
+				    {{i.namaProduct}}
+				</div>
+		      <div class="card-body">
+		        <h5 class="card-title">{{i.keteranganProduct|linebreaks}}</h5>
+		        <h6 class="card-text">Harga Estimasi Rp.{{i.hargaProduct|intcomma}}</h6>
+		        <a href="#" class="btn btn-primary">Go somewhere</a>
+		      </div>
+		    </div>
+		  </div>
+	</div>
+	{% endfor %}
+{% endblock Content %}

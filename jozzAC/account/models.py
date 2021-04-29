@@ -25,7 +25,13 @@ class manageAkunAdmin(BaseUserManager):
 		return user
 
 class Account(AbstractBaseUser):
+	jabatanChoice        = [
+        ('ADMIN','ADMIN'),
+        ('TEKNISI','TEKNISI'),
+    ]
+
 	username		= models.CharField(max_length=30, unique=True)
+	jabatan			= models.CharField(choices=jabatanChoice, max_length=8)
 	last_login		= models.DateTimeField(verbose_name='last login', auto_now=True)
 	is_admin		= models.BooleanField(default=True)
 	is_active		= models.BooleanField(default=True)

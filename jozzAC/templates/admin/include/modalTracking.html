@@ -1,0 +1,57 @@
+{% load static %}
+{% load humanize %}
+
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title" id="exampleModalLabel">Tambah Data Dosen</h5> -->
+                <div class="modal-title" id="exampleModalLabel">
+                    <h6 id='nama'></h6>
+                    <h6 id='telp'></h6>
+                    <h6 id='alamat'></h6>
+                    <h6 id='kota'></h6>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" id='kwitansi'></h5>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text" id='ket'></p>
+                        <br>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <h6 id='total'></h6>
+                                </div>
+                                <div class="col-sm">
+                                    <h6>PIC : Yogi</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row">
+                        <h6 id='approve'></h6>
+                    </div>
+                    <div class="row" id="payment">
+                        <h6>Belum Ada Pembayaran</h6>
+                    </div>
+                    <div class="row" id="status">
+                        <h6></h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

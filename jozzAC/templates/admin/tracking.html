@@ -1,0 +1,139 @@
+{% extends "admin/base_admin.html" %}
+{% load static %}
+
+
+{% block Content %}
+	<!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Tracking</h1>
+                    </div>
+
+                    <!-- Content Form -->
+                    <div class="container">
+                        <div class="row">
+                        	{% for data in pesanan %}
+	                            <div class="col-sm">
+	                                <div class="card">
+	                                    <a href="#"data-toggle="modal" data-target="#Modal" class="klik"
+	                                    data-id={{data.id}}
+	                                    data-approve={{data.ApprovPesanan.approve}}
+	                                    data-payment={{data.payment.all}}
+	                                    >
+
+	                                    
+	                                        <div class="card-body">
+	                                        	<p id="namaClient">{{data.client.nama_Client}}</p>
+	                                            <p id="telpClient">{{data.client.noTelp_Client}}</p>
+	                                            <p id="alamatClient">{{data.client.alamat_Client}} {{data.client.kota_Client}}</p>
+	                                            {% for payment in data.payment.all %}
+	                                            	{% if forloop.last %}
+	                                            		{{payment.get_status_display|json_script:"statusPayment{data.id}"}}
+	                                            	{% endif %}
+	                                            {% endfor %}
+	                                            {{data.ApprovPesanan.approvalSPK.get_status_display|json_script:"statusSPK"}}
+	                                            {{data.ApprovPesanan.approvalSPK.get_status_display}}
+	                                        </div>
+	                                    </a>
+	                                </div>
+	                            </div>
+                        	{% endfor %}
+                          
+                        </div>
+                    </div>
+
+                    <!-- /.container-fluid -->
+
+                </div>
+                <!-- End of Main Content -->
+{% endblock Content %}
+
+{% block Modal %}
+	{% include "admin/include/modalTracking.html" %}
+{% endblock Modal %}
+
+{% block javaScript %}
+<script type="text/javascript">
+	var  my_fileJs = {{my_list|safe}};
+	var  my_payment = {{my_payment|safe}};
+	var  my_approv = {{my_approv|safe}};
+	console.log("File : \n");
+	console.log(my_fileJs);
+
+	console.log("Payment : \n");
+	console.log(my_payment);
+
+	console.log("Aprrov : \n");
+	console.log(my_approv);
+	$('.klik').click(function(){
+		
+		// console.log(`client${}`);
+
+		for (prop in my_fileJs) {
+			if ($(this).data('id') === my_fileJs[prop].pk) {
+				console.log("Status Bayar " + document.getElementById("statusPayment{data.id}").textContent)
+
+				let ket = my_fileJs[prop].fields['Keterangan']
+				// console.log(my_fileJs[prop].pk);
+				document.getElementById("kwitansi").innerHTML = my_fileJs[prop].fields['kwitansi'];
+
+				document.getElementById("ket").innerHTML = ket.replace('\r\n', '<br/>');
+
+				document.getElementById("nama").innerHTML = document.getElementById("namaClient").innerHTML;
+
+				document.getElementById("telp").innerHTML = document.getElementById("telpClient").innerHTML;
+
+				document.getElementById("alamat").innerHTML = document.getElementById("alamatClient").innerHTML;
+
+				document.getElementById("total").innerHTML = "Rp. " + my_fileJs[prop].fields['total'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+				
+				for (Appr in my_approv) {
+					if (my_approv[Appr].pk === my_fileJs[prop].pk) {
+						// console.log("Status : " + my_approv[Appr].fields['approve']);
+						if (my_approv[Appr].fields['approve'] === true) {
+							document.getElementById("approve").innerHTML = "Sudah Approved";
+						}
+						else{
+							document.getElementById("approve").innerHTML = "Belum Approved";
+						}
+					}
+				}
+
+				// for (var i = 0; i < my_payment.length; i++) {
+				// 	expression
+				// }
+
+				if (document.getElementById("statusPayment").textContent != null) {
+					document.getElementById("payment").innerHTML = document.getElementById("statusPayment").textContent;
+				}
+				else{
+					document.getElementById("payment").innerHTML = "Belum Ada Pembayaran";
+				}
+
+				// document.getElementById("payment").innerHTML = document.getElementById("statusPayment").textContent;
+
+				document.getElementById("status").innerHTML = document.getElementById("statusSPK").textContent.toString().replace('"', '');
+			}
+			
+		}
+		//  var id = $(this).data('id')
+		// var ket = document.getElementById(`keterangan${id}`).value;
+		// document.getElementById("nama").innerHTML = "Nama Client : " + $(this).data('nama');
+		
+		// document.getElementById("kota").innerHTML = $(this).data('kota');
+		// document.getElementById("telp").innerHTML = "No Telp Client : " + $(this).data('telp');
+		// document.getElementById("alamat").innerHTML = "Alamat : " + document.getElementById(`alamat${id}`).value;
+		
+		// document.getElementById("total").innerHTML = "Total Tagihan : " + str($(this).data('total'));
+
+		// if (Boolean($(this).data('approve') == 'True')) {
+		// 	document.getElementById("approve").innerHTML = "Sudah Approved";
+		// }
+		// else{
+		// 	document.getElementById("approve").innerHTML = "Belum Approved";
+		// }
+	});
+</script>
+{% endblock javaScript %}

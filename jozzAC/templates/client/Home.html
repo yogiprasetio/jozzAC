@@ -1,0 +1,140 @@
+{% extends "client/base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href= "{% static "css/style.css" %}">
+{% endblock css %}
+
+{% block Content %}
+    <!-- jumbotron -->
+    <section class="home">
+        <div class="jumbotron" id="#home" style="background-image: url({% static "asset/bacground_1.jpg" %});">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h1>Joz AC</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ut sunt quibusdam praesentium hic voluptas, dolorum aperiam ducimus ratione! Tempore!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- akhir jumbotron -->
+
+    <!-- How To Order-->
+    <section class="HowToOrder" id="HowToOrder" style="background-image: url({% static "asset/19197735.jpg" %});">
+        <div class="container">
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-12 text-center heading-section ftco-animate fadeInUp ftco-animated">
+                    <h2 class="mb-3 text-white">How To Order</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="timeline animate-box">
+                        <li class="animate-box ">
+                            <div class="timeline-badge">
+                                <h5>First</h5>
+                            </div>
+                            <div class="timeline-panel ftco-animate text-md-left fadeInUp ftco-animated">
+                                <div class="icon icon-left"><span class="flaticon-dove-1"></span></div>
+                                <div class="timeline-heading">
+                                    <h6 class="timeline-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, dolores.</h6>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="animate-box timeline-inverted">
+                            <div class="timeline-badge">
+                                <h5>Second</h5>
+                            </div>
+                            <div class="timeline-panel ftco-animate text-md-right fadeInUp ftco-animated">
+                                <div class="icon icon-right"><span class="flaticon-dove-1"></span></div>
+                                <div class="timeline-heading">
+                                    <h6 class="timeline-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, dolores.</h6>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- akhir How To Order -->
+
+    <!-- About -->
+    <section class="about" id="about" style="background-image: url({% static "asset/Blog_Merk-AC-Terbaik-Adem-dan-Hemat-Berkat-Low-Watt.jpg" %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ">
+                    <h2 class="text-center">About</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 offset-sm-1">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- akhir about -->
+
+    <!-- Product -->
+
+    <!-- Akhir Product -->
+    <!-- Footer -->
+    <footer class="pt-5 pb-5 bt-1">
+        <div class="container mb-5">
+            <div class="pt-5 pb-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            <h2>Joz AC</h2>
+                            <h5 class="w-75">Jadikan Rumah anda lebih sejuk dan nyaman tanpa harus berat di Biaya bersama kami.</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>
+                            <h4>Bantuan</h4>
+                            <nav class="nav flex-column">
+                                <a class="nav-link pl-0" href="#">Cara Order</a>
+                                <a class="nav-link pl-0" href="#">LProduct</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>
+                            <h4>Explore</h4>
+                            <nav class="nav flex-column">
+                                <a class="nav-link pl-0" href="#">Contact Us</a>
+                                <a class="nav-link pl-0" href="#">About Us</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container pt-5 ">
+            <div class="text-center">
+                <p>&copy; 2021 - Joz AC - All right reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Akhir Footer -->
+{% endblock Content %}

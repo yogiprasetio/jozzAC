@@ -6,14 +6,14 @@ class ClientModel(models.Model):
     """
     Description: Model Description
     """
-    nama_Client 		= models.CharField(max_length=30)
-    noTelp_Client		= models.CharField(max_length=15)
-    email_Client		= models.EmailField()
-    alamat_Client		= models.CharField(max_length=254)
-    kecamatan_Client	= models.CharField(max_length=30)
-    kelurahan_Client	= models.CharField(max_length=30)
-    kodePos_Client		= models.CharField(max_length=30)
-    kota_Client			= models.CharField(max_length=30, default='SURABAYA')
+    nama_Client 		= models.CharField(max_length=30, verbose_name='Nama')
+    noTelp_Client		= models.CharField(max_length=15, verbose_name='Phone')
+    email_Client		= models.EmailField(verbose_name='Email')
+    alamat_Client		= models.CharField(max_length=254, verbose_name='Alamat')
+    kecamatan_Client	= models.CharField(max_length=30, null=True, verbose_name='Kecamatan')
+    kelurahan_Client	= models.CharField(max_length=30, null=True, verbose_name='Kelurahan')
+    kodePos_Client		= models.CharField(max_length=30, null=True, verbose_name='Kode Pos')
+    kota_Client			= models.CharField(max_length=30, default='SURABAYA', null=True, verbose_name='Kota')
     slug_Client			= models.SlugField()
 
     class Meta:
@@ -21,7 +21,7 @@ class ClientModel(models.Model):
 
     def save(self):
     	super().save()
-    	if self.slug_Client is "":
+    	if self.slug_Client == "":
     		self.slug_Client = slugify(f"{self.id}_{self.nama_Client}_{self.noTelp_Client}")
     		self.save()
 

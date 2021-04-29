@@ -1,0 +1,67 @@
+{% extends "admin/base_admin.html" %}
+
+{% block Content %}
+	<div class="container-fluid pr-auto pl-2">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Add Spesial Order</h1>
+            </div>
+
+            <!-- Content Form -->
+            <form action="#" method="POST" class="ml-0 mr-5">
+            	{% csrf_token %}
+                <div class="form-group">
+                	{{formClient.nama_Client.label_tag}}
+                	{{formClient.nama_Client}}
+                </div>
+
+                <div class="form-group">
+                    {{formClient.noTelp_Client.label_tag}}
+                    {{formClient.noTelp_Client}}
+                </div>
+
+                <div class="form-group">
+                	{{formClient.email_Client.label_tag}}
+                	{{formClient.email_Client}}
+                </div>
+
+                <div class="form-group">
+                    {{formClient.alamat_Client.label_tag}}
+                    {{formClient.alamat_Client}}
+                </div>
+
+                <div class="form-group">
+                	{{form.Keterangan.label_tag}}
+                	{{form.Keterangan}}
+                </div>
+
+                <div class="form-group">
+                	{{form.total.label_tag}}
+                	{{form.total}}
+                </div>
+
+                <div class="form-group">
+                    <label for="inputAccount">Kordinator Teknisi</label>
+                    <select name="Teknisi" class="form-control" id="inputAccount">
+                    	<option value="-">-</option>
+                    	{% for i in account %}
+		                    <option value="{{i.username}}">{{i.username}}</option>
+                    	{% endfor %}
+                    </select>
+                </div>
+
+                <div class="modal-footer m-2">
+                    <span style="color: #2AF314;">
+                    	<input type="submit" name="", class="fas fa-check-circle fa-3x m-2">
+                        {# <i type="submit" class="fas fa-check-circle fa-3x m-2"></i> #}
+                    </span>
+                    <span style="color: #f80d04;">
+                        <i type="button" class="fas fa-times-circle fa-3x m-2"></i>
+                    </span>
+                </div>
+            </form>
+        <!-- /.container-fluid -->
+
+    </div>
+{% endblock Content %}

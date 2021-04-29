@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+
+    'channels',
 
     # Apps
     'product',
@@ -45,6 +48,7 @@ INSTALLED_APPS = [
     'client',
     'eventContent',
     'account',
+    'SPK_teknisi'
 ]
 
 AUTH_USER_MODEL = 'account.Account'
@@ -82,7 +86,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'jozzAc.wsgi.application'
-
+ASGI_APPLICATION = 'jozzAc.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases

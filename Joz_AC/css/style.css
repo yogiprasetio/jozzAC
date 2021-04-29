@@ -30,7 +30,9 @@ body {
 }
 
 .card {
-    border-width: 3px;
+    width: 300px;
+    height: 250px;
+    border-width: 50px;
     border-radius: 15px;
     border-color: #F1CD3B;
     background-color: transparent;
@@ -74,6 +76,23 @@ body {
 
 .timeline>li:after {
     clear: both;
+}
+
+.product {
+    height: 950px;
+}
+
+.timeline>li>.timeline-panel1 {
+    width: 85%;
+    height: max-content;
+    position: relative;
+    border-radius: 20px;
+    z-index: 0;
+    background: #F1CD3B;
+    padding: 10px;
+    -webkit-box-shadow: 0px 10px 32px -19px rgba(0, 0, 0, 0.36);
+    -moz-box-shadow: 0px 10px 32px -19px rgba(0, 0, 0, 0.36);
+    box-shadow: 0px 10px 32px -19px rgba(0, 0, 0, 0.36);
 }
 
 .timeline>li>.timeline-panel {
@@ -122,6 +141,26 @@ body {
         float: right;
     }
 } */
+
+.timeline-badge1 {
+    background-size: cover;
+    background-position: right right;
+    background-repeat: no-repeat;
+    position: fixed;
+    color: #fff;
+    width: 120px;
+    height: 120px;
+    line-height: 50px;
+    font-size: 1.4em;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    z-index: 1;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}
 
 .timeline>li>.timeline-badge {
     background-size: cover;
@@ -177,30 +216,28 @@ body {
     margin-bottom: 10px;
     font-family: "Rochester", cursive;
 }
-/*.testimony-section {
-    position: relative;
-}*/
 
-/*.testimony-section */
-.owl-carousel {
+.testimony-section {
+    position: relative;
+}
+
+.testimony-section .owl-carousel {
     margin: 0;
 }
 
-/*.testimony-section */
-.owl-carousel .owl-stage-outer {
+.testimony-section .owl-carousel .owl-stage-outer {
     padding: 1.2em 0 1em 0;
     position: relative;
 }
 
-/*.testimony-section*/
- .owl-nav {
+.testimony-section .owl-nav {
     position: absolute;
     top: 100%;
     width: 100%;
 }
 
-/*.testimony-section */.owl-nav .owl-prev,
-/*.testimony-section */.owl-nav .owl-next {
+.testimony-section .owl-nav .owl-prev,
+.testimony-section .owl-nav .owl-next {
     position: absolute;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -215,8 +252,8 @@ body {
     opacity: 0;
 }
 
-/*.testimony-section*/ .owl-nav .owl-prev span:before,
-/*.testimony-section*/ .owl-nav .owl-next span:before {
+.testimony-section .owl-nav .owl-prev span:before,
+.testimony-section .owl-nav .owl-next span:before {
     font-size: 30px;
     color: rgba(0, 0, 0, 0.5);
     -moz-transition: all 0.3s ease;
@@ -226,43 +263,43 @@ body {
     transition: all 0.3s ease;
 }
 
-/*.testimony-section*/ .owl-nav .owl-prev:hover span:before,
-/*.testimony-section*/ .owl-nav .owl-prev:focus span:before,
-/*.testimony-section*/ .owl-nav .owl-next:hover span:before,
-/*.testimony-section*/ .owl-nav .owl-next:focus span:before {
+.testimony-section .owl-nav .owl-prev:hover span:before,
+.testimony-section .owl-nav .owl-prev:focus span:before,
+.testimony-section .owl-nav .owl-next:hover span:before,
+.testimony-section .owl-nav .owl-next:focus span:before {
     color: #fff;
 }
 
-/*.testimony-section*/ .owl-nav .owl-prev {
+.testimony-section .owl-nav .owl-prev {
     left: 50%;
     margin-left: -80px;
 }
 
-/*.testimony-section*/ .owl-nav .owl-next {
+.testimony-section .owl-nav .owl-next {
     right: 50%;
     margin-right: -80px;
 }
 
-/*.testimony-section*/:hover .owl-nav .owl-prev,
-/*.testimony-section*/:hover .owl-nav .owl-next {
+.testimony-section:hover .owl-nav .owl-prev,
+.testimony-section:hover .owl-nav .owl-next {
     opacity: 1;
 }
 
-/*.testimony-section*/:hover .owl-nav .owl-prev {
+.testimony-section:hover .owl-nav .owl-prev {
     left: 50%;
     margin-left: -80px;
 }
 
-/*.testimony-section*/:hover .owl-nav .owl-next {
+.testimony-section:hover .owl-nav .owl-next {
     right: 50%;
     margin-right: -80px;
 }
 
-/*.testimony-section*/ .owl-dots {
+.testimony-section .owl-dots {
     text-align: center;
 }
 
-/*.testimony-section*/ .owl-dots .owl-dot {
+.testimony-section .owl-dots .owl-dot {
     width: 10px;
     height: 10px;
     margin: 5px;
@@ -270,7 +307,7 @@ body {
     background: rgba(0, 0, 0, 0.1);
 }
 
-/*.testimony-section*/ .owl-dots .owl-dot.active {
+.testimony-section .owl-dots .owl-dot.active {
     background: #d291bc;
 }
 
@@ -288,6 +325,10 @@ body {
     -ms-border-radius: 5px;
     border-radius: 5px;
     z-index: 0;
+}
+
+.text-gray {
+    color: #F1CD3B;
 }
 
 .testimony-wrap .icon {
@@ -324,7 +365,6 @@ body {
     font-size: 16px;
     color: #d291bc;
 }
-
 
 hr {
     width: 250px;

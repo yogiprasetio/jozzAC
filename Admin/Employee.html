@@ -82,6 +82,16 @@
                     <i class="fas fa-ticket-alt"></i>
                     <span>Content</span>
                 </a>
+                <!-- <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <a class="collapse-item" href="utilities-color.html">Colors</a>
+                        <a class="collapse-item" href="utilities-border.html">Borders</a>
+                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
+                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                    </div>
+                </div> -->
             </li>
 
             <!-- Nav Item - Employee -->
@@ -310,61 +320,197 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid pr-auto pl-2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Employee</h1>
+                            <br>
+                        </div>
 
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Add Spesial Order</h1>
+                        <div class="col-6">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary float-left" data-toggle="modal"
+                                data-target="#exampleModal">
+                                Tambah Data
+                            </button>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group pull-left">
+                                <input id="searchInput" type="text" class="search form-control"
+                                    placeholder="Cari Nama">
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Picture</th>
+                                        <th>Phone</th>
+                                        <th>Jabatan</th>
+                                        <th colspan="2" style="text-align: center">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="data-table">
+                                    <tr>
+                                        <td>Name </td>
+                                        <td>Adrress </td>
+                                        <td>Picture</td>
+                                        <td>Phone</td>
+                                        <td>Jabatan</td>
+                                        <td style="text-align: center"><a href="#" class="btn-warning btn-sm" data-toggle="modal"
+                                            data-target="#modalEdit">Edit
+                                        <a href="#" class="btn-danger btn-sm ml-md-4"
+                                                onclick="return confirm('Data akan dihapus, lanjutkan?')">Delete</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
-                    <!-- Content Form -->
-                    <form action="# " method="POST" class="ml-0 mr-5">
-                        <div class="form-group">
-                            <label for="inputName">Name</label>
-                            <input name="name" type="text" class="form-control" id="inputName"
-                                aria-describedby="emailHelp">
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Tambah Content</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="#" method="POST">
+                                        <div class="form-group">
+                                            <label for="inputName">Name</label>
+                                            <input name="name" type="text" class="form-control" id="inputName"
+                                                aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputNIP">NIP</label>
+                                            <input name="nip" type="text" class="form-control" id="inputNIP"
+                                                aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputAddress">Address</label>
+                                            <input name="address" type="text" class="form-control" id="inputAddress"
+                                                aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPhone">Phone</label>
+                                            <input name="phone" type="text" class="form-control" id="inputPhone"
+                                                aria-describedby="emailHelp">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="inputEmail">Email</label>
+                                            <input name="email" type="email" class="form-control" id="inputEmail"
+                                                aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword">Password</label>
+                                            <input name="password" type="password" class="form-control" id="inputPassword"
+                                                aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlSelect1">Jabatan</label>
+                                            <select name="jabatan" class="form-control" id="exampleFormControlSelect1">
+                                            <option value="Admin">Admin</option>
+                                            <option value="Teknisi">Teknisi</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Picture</label>
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                        </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="inputPhone">Phone</label>
-                            <input name="phone" type="text" class="form-control" id="inputPhone"
-                                aria-describedby="emailHelp">
+                    </div>
+                    <!-- End Modal -->
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Content</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#" method="POST">
+                                    <div class="form-group">
+                                        <label for="inputName">Name</label>
+                                        <input name="name" type="text" class="form-control" id="inputName"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputNIP">NIP</label>
+                                        <input name="nip" type="text" class="form-control" id="inputNIP"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAddress">Address</label>
+                                        <input name="address" type="text" class="form-control" id="inputAddress"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPhone">Phone</label>
+                                        <input name="phone" type="text" class="form-control" id="inputPhone"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="inputEmail">Email</label>
+                                        <input name="email" type="email" class="form-control" id="inputEmail"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword">Password</label>
+                                        <input name="password" type="password" class="form-control" id="inputPassword"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Jabatan</label>
+                                        <select name="jabatan" class="form-control" id="exampleFormControlSelect1">
+                                        <option value="Admin">Admin</option>
+                                        <option value="Teknisi">Teknisi</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Picture</label>
+                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                    </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+
                         </div>
-                        <div class="form-group">
-                            <label for="inputEmail">Email</label>
-                            <input name="email" type="email" class="form-control" id="inputEmail"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAddress">Address</label>
-                            <textarea name="address" type="text" class="form-control" id="inputAddress"
-                                aria-describedby="emailHelp"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPemesanan">Pemesanan</label>
-                            <input name="pemesanan" type="text" class="form-control" id="inputPemesanan"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPrice">Price</label>
-                            <input name="price" type="text" class="form-control" id="inputPrice"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1">Tukang</label>
-                            <select name="tukang" class="form-control" id="exampleFormControlSelect1">
-                            <option value="L">Laki-laki</option>
-                            <option value="P">Perempuan</option>
-                            </select>
-                        </div>
-                        <div class="modal-footer m-2">
-                            <span style="color: #2AF314;">
-                                <i type="submit" class="fas fa-check-circle fa-3x m-2"></i>
-                            </span>
-                            <span style="color: #f80d04;">
-                                <i type="button" class="fas fa-times-circle fa-3x m-2"></i>
-                            </span>
-                            </form>
-                        </div>
+                    </div>
+                </div>
+                <!-- End Modal -->
+
+
+
                 <!-- /.container-fluid -->
 
             </div>

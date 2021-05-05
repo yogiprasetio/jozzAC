@@ -1,6 +1,6 @@
 from django.urls import re_path
-from .consumers import NumberConsumer
+from .consumers import PesananConsumer
 
 ws_urlpatterns = [
-	re_path('ws/pesanan/(?P<id>\w+)/', NumberConsumer.as_asgi())
+	re_path(r'^pesanan/admin/tracking/(?P<id>\w+)$', PesananConsumer.as_asgi())
 ]

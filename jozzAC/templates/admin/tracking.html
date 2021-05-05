@@ -57,83 +57,63 @@
 {% block javaScript %}
 <script type="text/javascript">
 	var  my_fileJs = {{my_list|safe}};
-	var  my_payment = {{my_payment|safe}};
-	var  my_approv = {{my_approv|safe}};
-	console.log("File : \n");
-	console.log(my_fileJs);
+	var loc = window.location
+	var wsStart = 'ws://';
+	if (loc.protocol == 'https:') {
+		wsStart = 'wss://'
+	}
+	
+	url = wsStart + loc.host + loc.pathname;
 
-	console.log("Payment : \n");
-	console.log(my_payment);
 
-	console.log("Aprrov : \n");
-	console.log(my_approv);
 	$('.klik').click(function(){
-		
-		// console.log(`client${}`);
+		id = $(this).data('id');
 
-		for (prop in my_fileJs) {
-			if ($(this).data('id') === my_fileJs[prop].pk) {
-				console.log("Status Bayar " + document.getElementById("statusPayment{data.id}").textContent)
+		var socket = new WebSocket(url+id);
 
-				let ket = my_fileJs[prop].fields['Keterangan']
-				// console.log(my_fileJs[prop].pk);
-				document.getElementById("kwitansi").innerHTML = my_fileJs[prop].fields['kwitansi'];
+		socket.onmessage = function(e){
+			console.log('message', e);
+			var kwitansi = JSON.parse(e.data)
+			console.log(kwitansi.kwitansi);
+			document.getElementById("kwitansi").innerHTML = kwitansi.kwitansi;
 
-				document.getElementById("ket").innerHTML = ket.replace('\r\n', '<br/>');
+			var ket = kwitansi.keterangan;
 
-				document.getElementById("nama").innerHTML = document.getElementById("namaClient").innerHTML;
+			document.getElementById("ket").innerHTML = ket.replace(/\r?\n/g, '<br />');
 
-				document.getElementById("telp").innerHTML = document.getElementById("telpClient").innerHTML;
+			var total = kwitansi.total;
 
-				document.getElementById("alamat").innerHTML = document.getElementById("alamatClient").innerHTML;
-
-				document.getElementById("total").innerHTML = "Rp. " + my_fileJs[prop].fields['total'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-				
-				for (Appr in my_approv) {
-					if (my_approv[Appr].pk === my_fileJs[prop].pk) {
-						// console.log("Status : " + my_approv[Appr].fields['approve']);
-						if (my_approv[Appr].fields['approve'] === true) {
-							document.getElementById("approve").innerHTML = "Sudah Approved";
-						}
-						else{
-							document.getElementById("approve").innerHTML = "Belum Approved";
-						}
-					}
-				}
-
-				// for (var i = 0; i < my_payment.length; i++) {
-				// 	expression
-				// }
-
-				if (document.getElementById("statusPayment").textContent != null) {
-					document.getElementById("payment").innerHTML = document.getElementById("statusPayment").textContent;
-				}
-				else{
-					document.getElementById("payment").innerHTML = "Belum Ada Pembayaran";
-				}
-
-				// document.getElementById("payment").innerHTML = document.getElementById("statusPayment").textContent;
-
-				document.getElementById("status").innerHTML = document.getElementById("statusSPK").textContent.toString().replace('"', '');
+			document.getElementById("total").innerHTML = "Total : Rp." + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+			document.getElementById("nama").innerHTML = kwitansi.nama;
+			document.getElementById("telp").innerHTML = kwitansi.telp;
+			document.getElementById("alamat").innerHTML = kwitansi.alamat;
+			document.getElementById("kota").innerHTML = kwitansi.kota;
+			document.getElementById("payment").innerHTML = kwitansi.payment;
+			if (kwitansi.approve) {
+				document.getElementById("approve").innerHTML = 'Sudah Approv'
 			}
-			
-		}
-		//  var id = $(this).data('id')
-		// var ket = document.getElementById(`keterangan${id}`).value;
-		// document.getElementById("nama").innerHTML = "Nama Client : " + $(this).data('nama');
-		
-		// document.getElementById("kota").innerHTML = $(this).data('kota');
-		// document.getElementById("telp").innerHTML = "No Telp Client : " + $(this).data('telp');
-		// document.getElementById("alamat").innerHTML = "Alamat : " + document.getElementById(`alamat${id}`).value;
-		
-		// document.getElementById("total").innerHTML = "Total Tagihan : " + str($(this).data('total'));
+			else{
 
-		// if (Boolean($(this).data('approve') == 'True')) {
-		// 	document.getElementById("approve").innerHTML = "Sudah Approved";
-		// }
-		// else{
-		// 	document.getElementById("approve").innerHTML = "Belum Approved";
-		// }
+			 document.getElementById("approve").innerHTML = 'Belum Approv'
+			}
+			document.getElementById("teknisi").innerHTML = 'Teknisi : ' + kwitansi.teknisi;
+			document.getElementById("spkProgress").innerHTML = kwitansi.spkProgress;
+
+		};
+
+		socket.onopen = function(e){
+			console.log('open', e);
+		};
+
+		socket.onerror = function(e){
+			console.log('error', e);
+		};
+
+		socket.onclose = function(e){
+			console.log('close', e);
+		};
+		
+				
 	});
 </script>
 {% endblock javaScript %}

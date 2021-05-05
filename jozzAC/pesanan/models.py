@@ -8,42 +8,74 @@ from client.models import ClientModel
 from collections import OrderedDict
 
 # Create your models here.
+    
+
       
-class PesananModel(models.Model):
+class InvoiceModel(models.Model):
     """
     Description: Model Description
     """
-    kwitansi        = models.CharField(max_length=20, blank=True, verbose_name='Nomor Kwitansi')
-    product 		= models.ForeignKey(ProductModel, on_delete=models.DO_NOTHING, related_name='produk')
-    client          = models.ForeignKey(ClientModel, on_delete=models.DO_NOTHING, verbose_name='Nama Client', related_name='client')
-    Keterangan      = models.TextField()
-    jumlah_Ac		= models.PositiveIntegerField(verbose_name='Jumlah AC', null=True)
-    tanggal			= models.DateField(auto_now=True, editable=False, verbose_name='Tanggal')
-    total			= models.PositiveIntegerField(default=0, verbose_name='Total Pembayaran')
-    slug_Pesanan	= models.SlugField()
+    statusChoise = [
+    ('LUNAS','LUNAS'),
+    ('BELUM', 'BELUM LUNAS'),
+    ]
+
+    Invoice            = models.CharField(max_length=20, blank=True, verbose_name='Nomor Invoice')
+    statusPembayaran    = models.CharField(choices=statusChoise, max_length=20, default='BELUM')
+    Keterangan          = models.TextField()
+    tanggal			    = models.DateField(auto_now=True, editable=False, verbose_name='Tanggal')
+    totalInvoice	    = models.PositiveIntegerField(default=0, verbose_name='Total Pembayaran')
+    slug_Invoice	    = models.SlugField()
 
     class Meta:
-        verbose_name='Pesanan'
-        verbose_name_plural='Pesanan'
+        verbose_name='Invoice'
+        verbose_name_plural='Invoice'
 
 
     def save(self):
         # self.total	= self.jumlah_Ac * int(self.product.hargaProduct)
         super().save()
-        if self.slug_Pesanan == "":
+        if self.slug_Invoice == "":
 
             self.kwitansi       = f"INV/{str(self.id).zfill(4)}/{write_roman(self.tanggal.month)}/{self.tanggal.year}".upper()
 
-            self.slug_Pesanan	= slugify(f"{self.kwitansi}")
+            self.slug_Invoice	= slugify(f"{self.kwitansi}")
 
             self.save()
 
-    def get_last_payment(self):
-        print("Masuk")
-        return self.payment.all().order_by('-id')[0]
-
     def __str__(self):
     	return f"{self.kwitansi}"
+
+
+class Job_OrderModel(models.Model):
+
+    nomor_jo        = models.CharField(max_length=20, blank=True, verbose_name='NOMOR JO')
+    product         = models.ForeignKey(ProductModel, on_delete=models.DO_NOTHING, related_name='productJO')
+    client          = models.ForeignKey(ClientModel, on_delete=models.DO_NOTHING, related_name='clientJO')
+    invoice         = models.ForeignKey(InvoiceModel, on_delete=models.SET_NULL, related_name='invoiceJO', null=True, blank=True)
+    jumlah_Ac       = models.PositiveIntegerField()
+    total           = models.PositiveIntegerField()
+    tgl_input       = models.DateField(auto_now=True)
+    slugJO          = models.SlugField()
+
+    def save(self):
+        # self.total    = self.jumlah_Ac * int(self.product.hargaProduct)
+        super().save()
+        if self.slugJO == "":
+
+            self.nomor_jo       = f"{str(self.id).zfill(4)}/JO/{write_roman(self.tgl_input.month)}/{self.tgl_input.year}".upper()
+
+            self.slug_Pesanan   = slugify(f"{self.nomor_jo}")
+
+            self.save()
+
+
+    class Meta:
+        verbose_name = "Job Order"
+        verbose_name_plural = "Job Order"
+
+    def __str__(self):
+        return self.nomor_jo
 
 
 class approvalModel(models.Model):
@@ -53,7 +85,7 @@ class approvalModel(models.Model):
         ('CANCEL','CANCEL'),
     ]
 
-    pesanan             = models.OneToOneField(PesananModel, on_delete=models.DO_NOTHING, related_name='ApprovPesanan')
+    invoice             = models.OneToOneField(InvoiceModel, on_delete=models.DO_NOTHING, related_name='ApprovPesanan')
     admin               = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING, related_name='adminUser')
     approve             = models.BooleanField(default=False)
     tgl_approve         = models.DateField(null=True, blank=True, verbose_name='Tanggal Approval')
@@ -76,18 +108,12 @@ class pembayaranModel(models.Model):
     """
     Description: Model Description
     """
-    statusChoice        = [
-        ('DP','UANG MUKA'),
-        ('CICILAN','CICILAN'),
-        ('LUNAS','LUNAS'),
-    ]
 
     no_pembayaran       = models.CharField(max_length=30, verbose_name='Nomor Pembayaran')
     tgl_input           = models.DateField(auto_now=True, verbose_name='Tanggal Input')
-    pesanan             = models.ForeignKey(PesananModel, on_delete=models.DO_NOTHING, related_name='payment')
+    invoice             = models.ForeignKey(InvoiceModel, on_delete=models.DO_NOTHING, related_name='payment')
     admin               = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING, related_name='admin')
     jumlah              = models.PositiveIntegerField(default=0, verbose_name='Jumlah Pembayaran')
-    status              = models.CharField(choices=statusChoice, max_length=10)
     keterangan          = models.TextField()
     tgl_pembayaran      = models.DateField(verbose_name='Tanggal Pembayaran')
     slug_pembayaran     = models.SlugField()

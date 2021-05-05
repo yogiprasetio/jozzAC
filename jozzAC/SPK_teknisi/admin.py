@@ -6,11 +6,11 @@ class SPKAdmin(admin.ModelAdmin):
     '''
         Admin View for SPK
     '''
-    list_display = ('tgl_input' ,'no_SPK', 'teknisi', 'approval', 'status')
+    list_display = ('no_SPK', 'tgl_input', 'teknisi', 'pesanan', 'status')
     list_filter = ('tgl_input', 'teknisi')
 
 
-    readonly_fields = ('tgl_input', 'tgl_pengerjaan', 'slug_SPK')
+    readonly_fields = ('tgl_input', 'slug_SPK')
     search_fields = ('no_SPK',)
 
 admin.site.register(SPKModel, SPKAdmin)

@@ -1,18 +1,23 @@
 from django.contrib import admin
-from .models import PesananModel, approvalModel, pembayaranModel
+from .models import InvoiceModel, approvalModel, pembayaranModel, Job_OrderModel
 
 # Register your models here.
-class PesananAdmin(admin.ModelAdmin):
+
+class JOAdmin(admin.TabularInline):
+
+    model = Job_OrderModel
+
+class InvoiceAdmin(admin.ModelAdmin):
     '''
         Admin View for Pesanan
     '''
-    # model = [PesananModel]
+    inlines = [Job_OrderModel]
     list_display = ('tanggal', 'kwitansi','tanggal', 'total',)
     list_filter = ('tanggal',)
 
     readonly_fields = ('kwitansi', 'slug_Pesanan', 'tanggal')
     search_fields = ('kwitansi', )
-admin.site.register(PesananModel, PesananAdmin)
+admin.site.register(InvoiceModel, InvoiceAdmin)
 
 class ApprovalAdmin(admin.ModelAdmin):
     '''
@@ -30,7 +35,7 @@ class PembayaranAdmin(admin.ModelAdmin):
     '''
         Admin View for Pesanan
     '''
-    list_display = ('tgl_input', 'no_pembayaran','pesanan', 'jumlah', 'status', 'tgl_pembayaran')
+    list_display = ('tgl_input', 'no_pembayaran','pesanan', 'jumlah', 'tgl_pembayaran')
     list_filter = ('no_pembayaran',)
 
     readonly_fields = ('tgl_input', 'slug_pembayaran')

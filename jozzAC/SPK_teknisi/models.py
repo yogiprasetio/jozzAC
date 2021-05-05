@@ -1,5 +1,5 @@
 from django.db import models
-from pesanan.models import approvalModel
+from pesanan.models import approvalModel, InvoiceModel
 from django.conf import settings
 from django.utils.text import slugify
 
@@ -20,10 +20,10 @@ class SPKModel(models.Model):
     no_SPK			= models.CharField(max_length=30, verbose_name='Nomor SPK', blank=True)
     tgl_input		= models.DateField(auto_now=True, verbose_name='Tanggal Input')
     teknisi			= models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING, related_name='teknisiUser', verbose_name='Teknisi')
-    approval		= models.OneToOneField(approvalModel, related_name='approvalSPK', on_delete=models.DO_NOTHING)
-    tgl_pengerjaan	= models.DateField(verbose_name='Tanggal Pengerjaan', auto_now=True)
+    pesanan		    = models.OneToOneField(InvoiceModel, related_name='SPK', on_delete=models.DO_NOTHING, verbose_name='Kwitansi')
+    tgl_pengerjaan	= models.DateField(verbose_name='Tanggal Pengerjaan')
     keterangan		= models.TextField(verbose_name='Keterangan')
-    status			= models.CharField(choices=statusChoice, max_length=10)
+    status			= models.CharField(choices=statusChoice, max_length=10, default='PENDING')
     slug_SPK		= models.SlugField()
 
     class Meta:

@@ -1,0 +1,12 @@
+.card-item {
+    max-width: 100%;
+    overflow-x: scroll;
+}
+
+.card {
+    min-width: 20rem;
+}
+
+.header-form {
+    background-color: rgb(255, 251, 9);
+}

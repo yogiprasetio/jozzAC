@@ -380,6 +380,10 @@ section {
     height: 800px;
 }
 
+.HowToOrder {
+    height: 1000px
+}
+
 footer {
     background-color: #F1CD3B;
     position: relative;

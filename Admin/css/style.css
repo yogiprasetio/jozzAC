@@ -10,3 +10,25 @@
 .header-form {
     background-color: rgb(255, 251, 9);
 }
+
+.list-product-phone{
+    display:none;
+}
+
+@media only screen and (max-width:700px) {
+    .list-product-phone{
+        display:inline;
+    }
+
+    .list-product-dekstop{
+        display:none;
+    }
+    .col{
+        padding-right: 0rem;
+        padding-left: 0rem;
+    }
+
+    .container-fluid{
+        padding: unset;
+    }
+}

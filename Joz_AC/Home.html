@@ -25,11 +25,14 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- <a href="#home" class="navbar-brand ">
+                    <img src="asset/Logo_cv.png" alt="logo">
+                </a> -->
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <a href="#home" class="navbar-brand ">
                     <img src="asset/Logo_cv.png" alt="logo">
                 </a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">
                     <li class="nav-item">
                         <a class="nav-link" style="color: #783b08;" href="#about">About </a>
@@ -53,6 +56,7 @@
     <!-- jumbotron -->
     <section class="home">
         <div class="jumbotron" id="#home" style="background-image: url('asset/bacground_1.jpg');">
+            <!-- <div class="jumbotron" id="#home"> -->
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
@@ -69,7 +73,7 @@
     <section class="about" id="about" style="background-image: url('asset/Layout_2.jpg');">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 ">
+                <div class="col-sm-12">
                     <h2 class="text-center">About</h2>
                     <hr>
                 </div>
@@ -89,12 +93,13 @@
     <!-- akhir about -->
     <!-- Testimonial -->
     <section class="testimonial testimony-section bg-ligth" style="height: 390px;" id="testimonial">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-sm-12 ">
                 <h2 class="text-center">Testimonial</h2>
                 <hr>
             </div>
-        </div>
+        </div> -->
+        <h2 class="text-center">Testimonial</h2>
         <div id="carouselExampleControls" class="row ftco-animate fadeInUp ftco-animated carousel slide" data-ride="carousel">
             <div class="col-md-12">
                 <div class="carousel-testimony owl-carousel ftco-owl owl-loaded owl-drag">
@@ -195,8 +200,10 @@
 
     <!-- Akhir Testimonial -->
     <!-- How To Order-->
-    <section class="HowToOrder" id="HowToOrder" style="background-image: url('asset/imagesBackGround.jpg');">
-        <div class="container">
+    <!-- <section class="HowToOrder" id="HowToOrder" style="background-image: url('asset/imagesBackGround.jpg');">
+        <div class="container"> -->
+    <section class="HowToOrder" id="HowToOrder" >
+        <div class="container" style="background-image: url('asset/imagesBackGround.jpg');">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-12 text-center heading-section ftco-animate fadeInUp ftco-animated">
                     <h2 class="mb-3 text-white">How To Order</h2>
@@ -259,12 +266,14 @@
     <!-- akhir How To Order -->
     <!-- Product -->
     <section class="product bg-ligth" id="Product">
-        <div class="row justify-content-center pb-1">
-            <div class="col-md-12 text-center heading-section ftco-animate fadeInUp ftco-animated">
+        <!-- <div class="row justify-content-center pb-1">
+            <div class="col-sm text-center heading-section ftco-animate fadeInUp ftco-animated">
                 <h2 class="mb-3 text-gray">Our Product</h2>
                 <hr>
             </div>
-        </div>
+        </div> -->
+            <h2 class="mb-3 text-gray text-center justify-content-center pb-1">Our Product</h2>
+            <hr>
         <div class="container mx-auto my-auto">
             <div class="card-group mx-auto my-auto">
                 <div class="row justify-content-center">
@@ -316,7 +325,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-8"></div>
             <div class="col-md-4">
                 <ul class="timeline animate-box">
@@ -339,79 +348,153 @@
                     </li>
                 </ul>
             </div>
+        </div> -->
+        <div class="peringatan">
+            <ul class="timeline animate-box">
+                <li class="animate-box ">
+                    <div class="timeline-badge1">
+                        <div class="icon icon-right">
+                            <!-- <a href=""><img src="asset/Whatsaap.jpg" alt="" style="
+                            height: 67px;
+                            width: 75px;
+                        "></a> -->
+                        <a href=""><img src="asset/Whatsaap.jpg" class="icon-WA"></a>
+                        </div>
+                    </div>
+                    <div class="timeline-panel1 ftco-animate text-md-left fadeInUp ftco-animated">
+                        <a href="">
+                            <div class="timeline-heading">
+                                <h6 class="timeline-body">Jika anda memiliki peasanan yang tidak ada pada daftar harga atau pesanan dalam skala besar, jangan ragu untuk hubungi whatsapp kami ya..</h6>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="row justify-content-center pb-5">
+        <!-- <div class="row justify-content-center pb-5">
             <div class="col-md-12 text-center heading-section ftco-animate fadeInUp ftco-animated">
                 <a href=""><img src="asset/Next step.jpg" style="
                 width: 400px;
                 height: 80px;
             " alt=""></a>
             </div>
+        </div> -->
+        <div class="justify-content-center">
+            <!-- <a href=""><img src="asset/Next step.jpg" style="
+                width: 400px;
+                height: 80px;
+            "></a> -->
+            <a href=""><img src="asset/Next step.jpg" class="btn-next"></a>
         </div>
     </section>
 
     <!-- Akhir Product -->
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content" style="width: 752px;">
-                <div class="modal-header">
-                    <!-- <h5 class="modal-title" id="exampleModalLabel">Tambah Data Dosen</h5> -->
-                    <div class="modal-title text-center" id="exampleModalLabel">
-                        <h1>AC 25 PK</h1>
+        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="width: 752px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-title text-center" id="exampleModalLabel">
+                            <h1>AC 25 PK</h1>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                     </div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row ml-1 mr-1">
-                        <div class="card col-sm-8">
-                            <div class="card-body" style="width: 457px;">
-                                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <br>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <h6>Price @ Rp.20000.000</h6>
+                    <div class="modal-body">
+                        <div class="row ml-1 mr-1">
+                            <div class="card col-sm-8">
+                                <div class="card-body" style="width: 457px;">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <br>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <h6>Price @ Rp.20000.000</h6>
+                                            </div>
+                                            <div class="col-sm">
+                                                <h6>Dp : Rp.200.000</h6>
+                                            </div>
                                         </div>
-                                        <div class="col-sm">
-                                            <h6>Dp : Rp.200.000</h6>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <h6>NB:</h6>
-                                            <p>Harga khusus untuk area Surabaya, Sidoarjo, dan Gresik. Untuk Pemesanan diluar area tersebut, harap menghubungi ADMIN via Whatsapp.</p>
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <h6>NB:</h6>
+                                                <p>Harga khusus untuk area Surabaya, Sidoarjo, dan Gresik. Untuk Pemesanan diluar area tersebut, harap menghubungi ADMIN via Whatsapp.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card col-sm-4">
-                            <div class="card-body" style="width: 457px;">
-                                <img src="asset/Whatsaap.jpg" alt="">
+                            <div class="card col-sm-4">
+                                <div class="card-body" style="width: 457px;">
+                                    <img src="asset/Whatsaap.jpg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm text-center">
-                                <button type="button" class="btn btn-warning rounded-pill mb-auto" data-toggle="modal" data-target="#exampleModal">ADD to Chart</button>
+                    <div class="modal-footer">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm text-center">
+                                    <button type="button" class="btn btn-warning rounded-pill mb-auto" data-toggle="modal" data-target="#exampleModal">ADD to Chart</button>
+                                </div>
                             </div>
                         </div>
                     </div>
+    
                 </div>
-
+            </div>
+        </div> -->
+        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-title text-center" id="exampleModalLabel">
+                            <h1>AC 25 PK</h1>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card-body" style="width: auto; height: auto;"">
+                            <div class="card-text">
+                                <div class="row">
+                                    <div class="col-sm-9 card-text">
+                                        <h6>Some quick example text to build on the card title and make up the bulk of the card's content.</h6>
+                                        <br>
+                                        <h6>Price @ Rp.20000.000</h6>
+                                        <h6>Dp : Rp.200.000</h6>
+                                        <h6>NB:</h6>
+                                        <p>Harga khusus untuk area Surabaya, Sidoarjo, dan Gresik. Untuk Pemesanan diluar area tersebut, harap menghubungi ADMIN via Whatsapp.</p>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <img src="asset/Whatsaap.jpg" alt="" class="min-width: 20px; max-width: 50px">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm text-center">
+                                    <button type="button" class="btn btn-warning rounded-pill mb-auto" data-toggle="modal" data-target="#exampleModal">ADD to Chart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
             </div>
         </div>
-    </div>
     <!-- Akhir Modal -->
     <!-- Footer -->
-    <footer class="pt-5 pb-5 bt-1">
+    <!-- <footer class="pt-5 pb-5 bt-1">
         <div class="container mb-5">
             <div class="pt-5 pb-5">
                 <div class="row">
@@ -445,6 +528,19 @@
         <div class="container pt-5 ">
             <div class="text-center">
                 <p>&copy; 2020 - Joz AC - All right reserved.</p>
+            </div>
+        </div>
+    </footer> -->
+
+    <footer >
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <h4>Joz AC</h2>
+                        <h6 class="w-75">Jadikan Dunia anda lebih sejuk dan nyaman tanpa harus berat di Biaya bersama kami.</h5>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
